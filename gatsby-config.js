@@ -1,10 +1,11 @@
 require("dotenv").config({
   path: `.env.${process.env.NODE_ENV}`,
-})
+});
 
 module.exports = {
   siteMetadata: {
     title: "writings",
+    siteUrl: "https://www.hopeinprocess.com"
   },
   plugins: [
     {
