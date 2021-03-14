@@ -1,12 +1,29 @@
-import * as React from "react"
-import Heading from "../components/heading/Heading"
+import * as React from "react";
+import { graphql } from "gatsby";
+import Layout from "../components/Layout";
+import Heading from "../components/heading/Heading";
 
-const IndexPage = () => {
+const IndexPage = (props) => {
+  const siteTitle = props.data.allContentfulSiteSettings.edges[0].node.siteTitle;
+
   return (
-    <div>Hello, world!
-      <Heading>Hello!</Heading>
-    </div>
-  )
+    <Layout>
+      <Heading>{siteTitle}</Heading>
+    </Layout>
+  );
 };
 
 export default IndexPage;
+
+export const pageQuery = graphql`
+  query SiteQuery {
+    allContentfulSiteSettings(filter: {node_locale: {eq: "en-US"}}) {
+      edges {
+        node {
+          siteTitle
+        }
+      }
+    }
+  }
+
+`
