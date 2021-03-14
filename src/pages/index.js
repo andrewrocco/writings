@@ -4,11 +4,11 @@ import Layout from "../components/Layout";
 import Heading from "../components/heading/Heading";
 
 const IndexPage = (props) => {
-  const siteTitle = props.data.allContentfulSiteSettings.edges[0].node.siteTitle;
+  const siteData = props.data.allContentfulSiteSettings.edges[0].node;
 
   return (
-    <Layout>
-      <Heading>{siteTitle}</Heading>
+    <Layout siteData={siteData}>
+      <Heading>Hold on here...</Heading>
     </Layout>
   );
 };
