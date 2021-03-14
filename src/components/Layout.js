@@ -12,7 +12,7 @@ const Layout = ({ siteData, pageData, children }) => {
         <html lang="en" />
         <meta charSet="utf-8" />
         <title>{siteTitle}</title>
-        <link rel="canonical" href="http://mysite.com/example" />
+        // <link rel="canonical" href="https://mysite.com/example" />
       </Helmet>
       <div className="container mx-auto">{children}</div>
     </>
