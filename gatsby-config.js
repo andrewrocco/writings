@@ -15,7 +15,7 @@ module.exports = {
         spaceId: process.env.SPACE_ID,
       },
     },
-    "gatsby-plugin-emotion",
+    "gatsby-plugin-postcss",
     "gatsby-plugin-image",
     "gatsby-plugin-react-helmet",
     "gatsby-plugin-sitemap",
