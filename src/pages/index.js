@@ -21,6 +21,9 @@ export const pageQuery = graphql`
       edges {
         node {
           siteTitle
+          seoDescription {
+            seoDescription
+          }
         }
       }
     }
