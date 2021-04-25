@@ -1,6 +1,7 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 import BlogPostBody from '../components/blogPostBody/BlogPostBody';
+import Heading from '../components/heading/Heading';
 // import { Helmet } from 'react-helmet';
 // import Layout from '../components/Layout';
 
@@ -10,7 +11,7 @@ const BlogPostTemplate = ({ data }) => {
   
   return(
     <>
-      <h1>{post.title}</h1>
+      <Heading>{post.title}</Heading>
       <BlogPostBody document={post.body} />
     </>
   );

@@ -2,14 +2,16 @@ import React from 'react';
 import { BLOCKS, MARKS } from '@contentful/rich-text-types';
 import { renderRichText } from 'gatsby-source-contentful/rich-text';
 
-const Bold = ({ children }) => <span className="bold">{children}</span>;
+import Paragraph from '../paragraph/Paragraph';
+
+const Bold = ({ children }) => <span className="font-bold">{children}</span>;
 
 const options = {
   renderMark: {
     [MARKS.BOLD]: text => <Bold>{text}</Bold>,
   },
   renderNode: {
-    [BLOCKS.PARAGRAPH]: (node, children) => <p>{children}</p>,
+    [BLOCKS.PARAGRAPH]: (node, children) => <Paragraph>{children}</Paragraph>,
     [BLOCKS.EMBEDDED_ASSET]: node => {
       return (
         <>
