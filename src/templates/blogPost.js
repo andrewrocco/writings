@@ -2,7 +2,6 @@ import React from 'react';
 import { graphql } from 'gatsby';
 import { Helmet } from 'react-helmet';
 import get from 'lodash/get';
-import Img from 'gatsby-image';
 import Layout from '../components/Layout';
 
 const BlogPostTemplate = () => {
@@ -10,7 +9,7 @@ const BlogPostTemplate = () => {
   // const siteTitle = get(this.props, 'data.site.siteMetadata.title');
   
   return(
-    <div>Hello, World</div>
+    <Layout>Hello, World</Layout>
   )
 };
 
