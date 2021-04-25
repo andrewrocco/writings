@@ -6,7 +6,9 @@ import Heading from '../components/heading/Heading';
 
 const IndexPage = (props) => {
   const siteData = props.data.allContentfulSiteSettings.edges[0].node;
-  const posts = get(this, 'props.data.allContentfulBlogPost.edges')
+  const posts = get(this, 'props.data.allContentfulBlogPost.edges');
+
+  console.log(posts);
 
   return (
     <Layout siteData={siteData}>
@@ -35,6 +37,15 @@ export const pageQuery = graphql`
           seoDescription {
             seoDescription
           }
+        }
+      }
+    }
+    allContentfulBlogPost(sort: { fields: [publishDate], order: DESC }) {
+      edges {
+        node {
+          title
+          slug
+          publishDate(formatString: "MMMM Do, YYYY")
         }
       }
     }
