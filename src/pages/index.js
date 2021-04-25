@@ -1,13 +1,11 @@
 import React from 'react';
-import { graphql } from 'gatsby';
+import { graphql, Link } from 'gatsby';
 import Layout from '../components/Layout';
 import Heading from '../components/heading/Heading';
 
 const IndexPage = (props) => {
   const siteData = props.data.allContentfulSiteSettings.edges[0].node;
   const posts = props.data.allContentfulBlogPost.edges;
-
-  console.log(posts);
 
   return (
     <Layout siteData={siteData}>
@@ -16,7 +14,7 @@ const IndexPage = (props) => {
         {posts.map(({ node }) => {
           return (
             <li key={node.slug}>
-              {node.title}
+              <Link to={`blog/${node.slug}`}>{node.title}</Link>
             </li>
           )
         })}
@@ -29,7 +27,7 @@ export default IndexPage;
 
 export const pageQuery = graphql`
   query SiteQuery {
-    allContentfulSiteSettings(filter: {node_locale: {eq: "en-US"}}) {
+    allContentfulSiteSettings {
       edges {
         node {
           siteTitle
