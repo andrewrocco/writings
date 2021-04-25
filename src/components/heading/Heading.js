@@ -1,6 +1,6 @@
-import React from "react";
+import React from 'react';
 import classnames from 'classnames';
-import * as styles from "./Heading.module.css";
+import * as styles from './Heading.module.css';
 
 const classes = classnames([styles.heading, 'text-gray-50']);
 
