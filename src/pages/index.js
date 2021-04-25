@@ -1,12 +1,11 @@
 import React from 'react';
 import { graphql } from 'gatsby';
-import get from 'lodash/get';
 import Layout from '../components/Layout';
 import Heading from '../components/heading/Heading';
 
 const IndexPage = (props) => {
   const siteData = props.data.allContentfulSiteSettings.edges[0].node;
-  const posts = get(this, 'props.data.allContentfulBlogPost.edges');
+  const posts = props.data.allContentfulBlogPost.edges;
 
   console.log(posts);
 
@@ -17,7 +16,7 @@ const IndexPage = (props) => {
         {posts.map(({ node }) => {
           return (
             <li key={node.slug}>
-              hello
+              {node.title}
             </li>
           )
         })}
