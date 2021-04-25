@@ -4,7 +4,7 @@ import classnames from 'classnames';
 import * as styles from './Heading.module.css';
 
 const Heading = ({children, level}) => {
-  const classes = classnames([styles.heading, 'font-medium']);
+  const classes = classnames([styles.heading, 'font-bold']);
   const HeadingTag = `h${level}`;
   
   return(
