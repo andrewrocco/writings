@@ -3,16 +3,17 @@ import PropTypes from "prop-types";
 import { Helmet } from "react-helmet";
 
 const Layout = ({ siteData, pageData, children }) => {
-  const siteMeta = siteData;
-  const siteTitle = siteMeta.siteTitle;
+  const siteTitle = siteData.siteTitle;
+  const seoDescription = siteData.seoDescription.seoDescription;
+  
+  console.log(siteData);
 
   return (
     <>
       <Helmet>
         <html lang="en" />
-        <meta charSet="utf-8" />
         <title>{siteTitle}</title>
-        // <link rel="canonical" href="https://mysite.com/example" />
+        <meta name="description" content={seoDescription} />
       </Helmet>
       <div className="container mx-auto">{children}</div>
     </>
