@@ -1,6 +1,9 @@
 import React from 'react';
-// import classnames from 'classnames';
 
-const Paragraph = ({ children }) => <p>{children}</p>;
+const Paragraph = ({ children }) => {
+  return(
+    <p className="mb-3 sm:mb-2">{children}</p>
+  );
+}
 
 export default Paragraph;
