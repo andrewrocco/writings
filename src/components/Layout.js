@@ -1,6 +1,6 @@
-import React from "react";
-import PropTypes from "prop-types";
-import { Helmet } from "react-helmet";
+import React from 'react';
+import PropTypes from 'prop-types';
+import { Helmet } from 'react-helmet';
 
 const Layout = ({ seoData, pageData, children }) => {
   const seoTitle = seoData ? seoData.seoTitle : '';
@@ -24,5 +24,8 @@ export default Layout;
 
 Layout.propTypes = {
   pageData: PropTypes.object,
-  seoData: PropTypes.object,
+  seoData: PropTypes.shape({
+    seoTitle: PropTypes.string,
+    seoDescription: PropTypes.object,
+  }),
 };
