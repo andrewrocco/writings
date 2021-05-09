@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import Navigation from '../components/nav/Navigation';
 import { Helmet } from 'react-helmet';
 
 const Layout = ({ seoData, pageData, children }) => {
@@ -15,7 +16,10 @@ const Layout = ({ seoData, pageData, children }) => {
           <meta name="description" content={seoDescription} />
         </Helmet>
       }
-      <div className="container mx-auto">{children}</div>
+      <div className="container mx-auto">
+      <Navigation/>
+      {children}
+      </div>
     </>
   )
 }
