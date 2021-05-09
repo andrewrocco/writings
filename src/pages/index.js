@@ -37,6 +37,13 @@ export const pageQuery = graphql`
         }
       }
     }
+    allContentfulHomePage {
+      edges {
+        node {
+          title
+        }
+      }
+    }
     allContentfulBlogPost(sort: { fields: [publishDate], order: DESC }) {
       edges {
         node {

@@ -15,8 +15,8 @@ const options = {
   },
 };
 
-const BlogPostBody = ({ document }) => {
+const RichText = ({ document }) => {
   return <div>{document && renderRichText(document, options)}</div>
 };
 
-export default BlogPostBody;
+export default RichText;
