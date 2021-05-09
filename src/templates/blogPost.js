@@ -1,19 +1,22 @@
 import React from 'react';
 import { graphql } from 'gatsby';
-import BlogPostBody from '../components/blogPostBody/BlogPostBody';
+import RichText from '../components/richText/RichText';
 import Heading from '../components/heading/Heading';
-// import { Helmet } from 'react-helmet';
-// import Layout from '../components/Layout';
+import Layout from '../components/Layout';
 
 const BlogPostTemplate = ({ data }) => {
-  // const siteData = data.allContentfulSiteSettings.edges[0].node;
   const post = data.contentfulBlogPost;
+
+  const blogPostSEO = {
+    seoTitle: post.title,
+    seoDescription: post.seoDescription,
+  };
   
   return(
-    <>
+    <Layout seoData={blogPostSEO}>
       <Heading>{post.title}</Heading>
-      <BlogPostBody document={post.body} />
-    </>
+      <RichText document={post.body} />
+    </Layout>
   );
 };
 
@@ -25,6 +28,9 @@ export const pageQuery = graphql`
       title
       body {
         raw
+      }
+      seoDescription {
+        seoDescription
       }
     }
   }
